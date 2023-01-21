@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink, useHistory } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 const linkStyles = {
   width: "100px",
@@ -15,7 +16,8 @@ function Navbar({ setIsLoggedIn }) {
 
   function handleLogout() {
     setIsLoggedIn(false);
-    history.push("/login");
+    return <Redirect to="/login" />;
+    // history.push("/login");
   }
 
   return (
